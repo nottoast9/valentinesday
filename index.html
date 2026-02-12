@@ -1068,11 +1068,10 @@ Imad 💗`;
 
         function playFinalVoice() {
             const audio = document.getElementById('final-voice-rec');
-            if(!audio.currentSrc || audio.currentSrc.includes(window.location.href)) {
-                showToast("Final voice note not uploaded yet!");
-                return;
-            }
-            audio.play();
+            audio.play().catch(e => {
+                showToast("Final voice note not available yet.");
+                console.error(e);
+            });
         }
 
         /* --- BACKGROUND MUSIC --- */
@@ -1131,6 +1130,7 @@ Imad 💗`;
 </body>
 
 </html>
+
 
 
 
