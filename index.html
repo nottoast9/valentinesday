@@ -975,12 +975,6 @@ Imad 💗`;
             const wave = document.getElementById(id === 1 ? 'wave-1' : 'wave-2');
             const icon = document.getElementById(id === 1 ? 'play-icon-1' : 'play-icon-2');
 
-            // Check if source is empty (placeholder)
-            if(!audio.currentSrc || audio.currentSrc.includes(window.location.href)) {
-                showToast("Audio file not uploaded yet!");
-                return;
-            }
-
             if(audio.paused) {
                 audio.play();
                 icon.classList.remove('fa-play');
@@ -1137,5 +1131,6 @@ Imad 💗`;
 </body>
 
 </html>
+
 
 
